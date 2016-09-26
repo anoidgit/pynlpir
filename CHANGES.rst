@@ -3,6 +3,14 @@
 Change Log
 ----------
 
+0.5.0 (2016-09-26)
+++++++++++++++++++
+
+* Handle missing parent pos. Fixes #61.
+* Correctly handle missing child pos. Fixes #52.
+* Adds LicenseError exception.
+* Updates NLPIR license.
+
 0.4.6 (2016-08-12)
 ++++++++++++++++++
 
