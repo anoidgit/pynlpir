@@ -84,3 +84,11 @@ class TestNLPIR(unittest.TestCase):
         except RuntimeError:
             self.fail('Segment function timed out.')
         self.assertEqual(expected_seg_s, seg_s)
+
+    def test_issue_61(self):
+        """Tests for issue #61 -- TypeError when pos names set to 'all'."""
+
+        s = '申报'
+        segments = pynlpir.segment(s=s, pos_names='all')
+        expected_segments = [('申报', '')]
+        self.assertEqual(segments, expected_segments)

@@ -147,7 +147,8 @@ def _get_pos_name(pos_code, names='parent', english=True, pos_map=POS_MAP):
             if i == len(pos_code):
                 logger.warning("part of speech not recognized: '%s'"
                                % pos_code)
-                return None  # Issue #20
+                pos_entry = (None, None)  # Issue #20
+                break
     pos = (pos_entry[1 if english else 0], )
     if names == 'parent':
         logger.debug("Part of speech name found: '%s'" % pos[0])

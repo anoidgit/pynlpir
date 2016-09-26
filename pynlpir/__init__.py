@@ -148,7 +148,10 @@ def _get_pos_name(code, name='parent', english=True, delimiter=':'):
 
     """
     pos_name = pos_map.get_pos_name(code, name, english)
-    return delimiter.join(pos_name) if name == 'all' else pos_name
+    if name == 'all':
+        pos_name = [pos for pos in pos_name if pos is not None]
+        pos_name = delimiter.join(pos_name)
+    return pos_name
 
 
 def segment(s, pos_tagging=True, pos_names='parent', pos_english=True):
